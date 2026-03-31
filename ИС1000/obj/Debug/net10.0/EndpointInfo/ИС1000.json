@@ -1,0 +1,153 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "ИС1000 | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:7087"
+    },
+    {
+      "url": "http://localhost:5253"
+    }
+  ],
+  "paths": {
+    "/api/Matches": {
+      "post": {
+        "tags": [
+          "Matches"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddMatchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddMatchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddMatchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Matches/{id}": {
+      "get": {
+        "tags": [
+          "Matches"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/meta/heroes": {
+      "get": {
+        "tags": [
+          "Matches"
+        ],
+        "parameters": [
+          {
+            "name": "position",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/hero/{heroName}/recent": {
+      "get": {
+        "tags": [
+          "Matches"
+        ],
+        "parameters": [
+          {
+            "name": "heroName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddMatchRequest": {
+        "type": "object",
+        "properties": {
+          "heroName": {
+            "type": "string"
+          },
+          "position": {
+            "type": "string"
+          },
+          "loseWin": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Matches"
+    }
+  ]
+}

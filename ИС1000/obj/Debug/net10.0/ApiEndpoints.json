@@ -1,0 +1,66 @@
+[
+  {
+    "ContainingType": "\u0418\u04211000.Controllers.MatchesController",
+    "Method": "GetHeroRecentMatches",
+    "RelativePath": "api/hero/{heroName}/recent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "heroName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u0418\u04211000.Controllers.MatchesController",
+    "Method": "AddMatch",
+    "RelativePath": "api/Matches",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "\u0418\u04211000.Models.AddMatchRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u0418\u04211000.Controllers.MatchesController",
+    "Method": "GetMatch",
+    "RelativePath": "api/Matches/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u0418\u04211000.Controllers.MatchesController",
+    "Method": "GetTopHeroes",
+    "RelativePath": "api/meta/heroes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "position",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
