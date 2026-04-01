@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Dota 2 Meta Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jomolhari&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- ГЛАВНЫЙ ЭКРАН (меню) -->
+        <div id="home-screen" class="screen active">
+            <div class="logo">
+                <img src="/images/logo/dota2-logo.svg" alt="Dota 2 Logo" class="logo-image">
+                <h1>DOTA 2 META TRACKER</h1>
+            </div>
+            <div class="menu-buttons">
+                <button id="add-data-btn" class="btn primary">ADD NEW DATA</button>
+                <button id="view-meta-btn" class="btn primary">VIEW META</button>
+            </div>
+        </div>
+
+        <!-- ЭКРАН ФОРМЫ ДОБАВЛЕНИЯ -->
+        <div id="add-screen" class="screen">
+            <div class="header">
+                <button class="back-btn" data-target="home">← BACK</button>
+                <h2>ADD NEW MATCH</h2>
+            </div>
+            <form id="match-form">
+                <div class="form-group">
+                    <label for="hero">HERO</label>
+                    <div class="custom-select" id="hero-custom-select">
+                        <input type="text" id="hero-input" placeholder="Type hero name..." autocomplete="off">
+                        <div class="custom-options" id="hero-options"></div>
+                        <input type="hidden" id="hero" name="hero">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="position">POSITION</label>
+                    <select id="position" name="position">
+                        <option value="">-- select position --</option>
+                        <option value="Carry">Carry</option>
+                        <option value="Mid">Mid</option>
+                        <option value="Offlane">Offlane</option>
+                        <option value="Hard Support">Hard Support</option>
+                        <option value="Soft Support">Soft Support</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>RESULT</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="lose_win" value="1"> WIN</label>
+                        <label><input type="radio" name="lose_win" value="0"> LOSS</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>ITEMS (up to 6 slots, leave empty if not used)</label>
+                    <div id="items-container">
+                        <div class="custom-select-item" data-slot="0">
+                            <input type="text" class="item-input" placeholder="Item 1" autocomplete="off">
+                            <div class="custom-options items-options"></div>
+                        </div>
+                        <div class="custom-select-item" data-slot="1">
+                            <input type="text" class="item-input" placeholder="Item 2" autocomplete="off">
+                            <div class="custom-options items-options"></div>
+                        </div>
+                        <div class="custom-select-item" data-slot="2">
+                            <input type="text" class="item-input" placeholder="Item 3" autocomplete="off">
+                            <div class="custom-options items-options"></div>
+                        </div>
+                        <div class="custom-select-item" data-slot="3">
+                            <input type="text" class="item-input" placeholder="Item 4" autocomplete="off">
+                            <div class="custom-options items-options"></div>
+                        </div>
+                        <div class="custom-select-item" data-slot="4">
+                            <input type="text" class="item-input" placeholder="Item 5" autocomplete="off">
+                            <div class="custom-options items-options"></div>
+                        </div>
+                        <div class="custom-select-item" data-slot="5">
+                            <input type="text" class="item-input" placeholder="Item 6" autocomplete="off">
+                            <div class="custom-options items-options"></div>
+                        </div>
+                    </div>
+                    <datalist id="item-list"></datalist>
+                </div>
+
+                <button type="submit" class="btn primary full-width">SAVE MATCH</button>
+            </form>
+        </div>
+
+        <!-- ЭКРАН МЕТЫ (позиции и топ героев) -->
+        <div id="meta-screen" class="screen">
+            <div class="header">
+                <button class="back-btn" data-target="home">← BACK</button>
+                <h2>META</h2>
+            </div>
+            <div class="position-tabs">
+                <button data-pos="Carry" class="pos-tab active">CARRY</button>
+                <button data-pos="Mid" class="pos-tab">MID</button>
+                <button data-pos="Offlane" class="pos-tab">OFFLANE</button>
+                <button data-pos="Hard Support" class="pos-tab">HARD SUPP</button>
+                <button data-pos="Soft Support" class="pos-tab">SOFT SUPP</button>
+            </div>
+            <div id="top-heroes-list" class="heroes-list"></div>
+        </div>
+
+        <!-- ЭКРАН ДЕТАЛЕЙ ГЕРОЯ (последние игры) -->
+        <div id="hero-detail-screen" class="screen">
+            <div class="header">
+                <button class="back-btn" data-target="meta">← BACK</button>
+                <h2 id="hero-detail-title">HERO DETAILS</h2>
+            </div>
+            <div id="hero-detail-content">
+                <!-- hero info + games list -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Тост вынесен за пределы экранов, чтобы работать везде -->
+    <div id="toast-message" class="toast"></div>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

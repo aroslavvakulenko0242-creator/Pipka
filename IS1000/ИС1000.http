@@ -1,0 +1,6 @@
+@ИС1000_HostAddress = http://localhost:5253
+
+GET {{ИС1000_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
