@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vSEQqtdwdR4=",
+  "dgSpecHash": "ypOP18W8AeY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\arosl\\lab-git\\ИС1000\\ИС1000\\ИС1000.csproj",
+  "projectFilePath": "C:\\Users\\arosl\\lab-git\\ИС1000\\ИС1000\\IS1000.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arosl\\.nuget\\packages\\dapper\\2.1.72\\dapper.2.1.72.nupkg.sha512",
     "C:\\Users\\arosl\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.5\\microsoft.aspnetcore.openapi.10.0.5.nupkg.sha512",

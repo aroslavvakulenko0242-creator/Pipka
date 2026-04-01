@@ -420,9 +420,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arosl\\lab-git\\ИС1000\\ИС1000\\ИС1000.csproj",
-      "projectName": "ИС1000",
-      "projectPath": "C:\\Users\\arosl\\lab-git\\ИС1000\\ИС1000\\ИС1000.csproj",
+      "projectUniqueName": "C:\\Users\\arosl\\lab-git\\ИС1000\\ИС1000\\IS1000.csproj",
+      "projectName": "IS1000",
+      "projectPath": "C:\\Users\\arosl\\lab-git\\ИС1000\\ИС1000\\IS1000.csproj",
       "packagesPath": "C:\\Users\\arosl\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\arosl\\lab-git\\ИС1000\\ИС1000\\obj\\",
       "projectStyle": "PackageReference",
